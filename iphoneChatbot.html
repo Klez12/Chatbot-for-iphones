@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A chatBot on iPhones </title>
+  <style>
+          
+    body{
+         font: 'Calibri';
+         max-width: 800px;
+          text-align: center;
+         margin: 30px auto; 
+         padding: 20px;
+         background: #FFFFFF;
+    }
+    input, button {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+         margin :10px
+      
+    }
+
+    .chatbox {
+      margin-top: 20px;
+      background: #b08adc;
+      padding: 20px;
+      border-radius: 8px;
+      width:100%
+      
+    }
+      </style>
+    </head>
+  <body>
+
+    <h1> iPhone ChatBot</h1>
+  <input type="text" id="question" placeholder="Ask a question based on iphones" />
+  <button onclick="question()">Enter</button>
+  <div class="chatbox" id="answerBox"></div>
+
+  <script>
+    const iPhoneQns = {
+      "when was the first iphone released": "The first iPhone was released in 2007.",
+       "who introduced the first iphone": "Steve Jobs unveiled the first iPhone.",
+       "which company makes iphones": "iPhones are manufactured by Apple Inc.",
+        "what is the operating system of iphone": "The iPhone runs on iOS.",
+        "which was the first iphone without home button": "The first iPhone without a Home button was the iPhone X.",
+        "which iphone introduced face id": "Face ID was first introduced with the iPhone X.",
+       "which iphone had the first triple camera": "The iPhone 11 Pro series introduced the triple camera setup.",
+      "What is the starting price of the iPhone 16 Pro Max?": "It starts at around $1199.",
+      "how much does an iphone cost": "iPhone prices vary by model. The iPhone 16 Pro Max starts at around $1199.",
+      "does iphone support 5g": "Yes, all iPhone models since the iPhone 12 support 5G.",
+      " Which country are most iPhones assembled in?": "China.",
+      "what ios version is available": "The current iOS version is iOS 18."
+    };
+
+    function question() {
+      const userQuestion = document.getElementById('question').value.toLowerCase();
+      let answer = "I don't have the answer of the above asked question ";
+
+ for (let key in iPhoneQns) {
+    if (userQuestion.includes(key)) {
+          answer = iPhoneQns[key];
+          break;
+        }
+      }
+       document.getElementById('answerBox').innerText = " Answer: " + answer;
+    }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+  
